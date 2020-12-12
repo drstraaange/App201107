@@ -7,8 +7,9 @@ from django.shortcuts import render
 #from rest_framework import status
 #from rest_framework.decorators import api_view
 #from rest_framework.response import Response
-from snippets.models import Snippet
+from snippets.models import Snippet, Snippet2
 from snippets.serializers import SnippetSerializer
+from snippets.serializers import Snippet2Serializer
 from rest_framework import generics
 
 class SnippetList(generics.ListCreateAPIView):
@@ -18,6 +19,14 @@ class SnippetList(generics.ListCreateAPIView):
 class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
+
+class Snippet2List(generics.ListCreateAPIView):
+    queryset = Snippet2.objects.all()
+    serializer_class = Snippet2Serializer
+
+class Snippet2Detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Snippet2.objects.all()
+    serializer_class = Snippet2Serializer
 
 #@csrf_exempt
 #def snippet_list(request):
