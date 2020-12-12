@@ -24,7 +24,7 @@ urlpatterns = [
 from django.urls import include, path
 from rest_framework import routers
 from mysite.quickstart.views import UserViewSet, GroupViewSet
-from snippets.views import snippet_list, snippet_detail
+#from snippets.views import snippet_list, snippet_detail
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
